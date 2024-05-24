@@ -1,0 +1,36 @@
+name: Create Release and Upload Artifacts
+
+on:
+  push:
+    branches:
+      - main
+env:
+  charts_folder: 'helm-charts'
+  GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # - name: Set up GitHub CLI
+      #   uses: jstone28/setup-gh-cli@v2
+
+      - name: Install Helm
+        uses: azure/setup-helm@v4
+
+      - name: Package Helm Charts
+        run: |
+          helm package ./$charts_folder/flask-api-chart --destination ./$charts_folder/flask-api-chart
+
+      - name: Create GitHub Release
+        id: create_release
+        run: |
+              #get chart version and name
+              version=$(grep '^version:' $charts_folder/flask-api-chart/Chart.yaml | awk '{print $2}')                  
+              name=$(grep '^name:' $charts_folder/flask-api-chart/Chart.yaml | awk '{print $2}') 
+              
+              gh release create v$version --notes "Release for $name chart v$version" ./$charts_folder/flask-api-chart/*.tgz
