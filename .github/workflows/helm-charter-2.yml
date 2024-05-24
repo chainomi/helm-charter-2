@@ -16,9 +16,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # - name: Set up GitHub CLI
-      #   uses: jstone28/setup-gh-cli@v2
-
       - name: Install Helm
         uses: azure/setup-helm@v4
 
@@ -33,4 +30,4 @@ jobs:
               version=$(grep '^version:' $charts_folder/flask-api-chart/Chart.yaml | awk '{print $2}')                  
               name=$(grep '^name:' $charts_folder/flask-api-chart/Chart.yaml | awk '{print $2}') 
               
-              gh release create name-$version --notes "Release for $name chart v$version" ./$charts_folder/flask-api-chart/*.tgz
+              gh release create $name-$version --notes "Release for $name chart v$version" ./$charts_folder/flask-api-chart/*.tgz
