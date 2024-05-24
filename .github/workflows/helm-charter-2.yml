@@ -33,4 +33,4 @@ jobs:
               version=$(grep '^version:' $charts_folder/flask-api-chart/Chart.yaml | awk '{print $2}')                  
               name=$(grep '^name:' $charts_folder/flask-api-chart/Chart.yaml | awk '{print $2}') 
               
-              gh release create v$version --notes "Release for $name chart v$version" ./$charts_folder/flask-api-chart/*.tgz
+              gh release create name-$version --notes "Release for $name chart v$version" ./$charts_folder/flask-api-chart/*.tgz
