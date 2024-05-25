@@ -1,0 +1,40 @@
+name: Create Release and Upload Artifacts
+
+on:
+  push:
+    branches:
+      - main
+env:
+  charts_folder: 'helm-charts'
+  charts_destination_folder: 'docs'
+  repo_url: 'https://chainomi.github.io/helm-charter-2'
+  GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Helm
+        uses: azure/setup-helm@v4
+
+      - name: Package Helm Charts
+        run: |
+          helm package ./$charts_folder/flask-api-chart --destination ./charts_destination_folder
+
+      - name: Add repo to index
+        id: update_repo_index
+        run: |
+              helm repo index docs --url $repo_url
+
+      - name: Upload artifact to repo
+        id: upload_artifact
+        run: |
+              git config user.name "chainomi"
+              git config user.email "chainomi@users.noreply.github.com"              
+              git add .
+              git commit -am "adding new chart"
+              git push origin main
