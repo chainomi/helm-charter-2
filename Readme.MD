@@ -14,6 +14,8 @@
 ## Adding Helm repo
 1. Add Helm repository - `helm repo add <gh_repo_name> https://<repo-owner>.github.io/<repo_name>`
 2. View list of charts in repo - `helm search repo <gh_repo_name>`
+3. View all versions of charts in a repo - `helm search repo <gh_repo_name> --versions`
+4. View all versions of specific chart in a repo - `helm search repo <gh_repo_name>\<chart_name> --versions
 
 
 # References
