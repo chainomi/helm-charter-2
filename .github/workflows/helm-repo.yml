@@ -24,7 +24,9 @@ jobs:
 
       - name: Package Helm Charts
         run: |
-              for chart in $charts_folder/*/ ; do
+              set -xe
+              
+              for chart in $charts_folder/* ; do
                 helm package ./$charts --destination ./$charts_destination_folder
               done 
 #              helm package ./$charts_folder/flask-api-chart --destination ./$charts_destination_folder
