@@ -3,12 +3,12 @@ entries:
   flask-api-chart:
   - apiVersion: v2
     appVersion: 1.0.1
-    created: "2024-05-25T23:39:02.521517932Z"
+    created: "2024-05-26T00:01:27.359071552Z"
     description: A Helm chart for flask api
-    digest: 42be5963937ef4dd481af8cc40175ed1c7540816615cb8c36cb88ef86982e522
+    digest: 5304ee21df8179f90f77734d8ba62cca288f1b784ef7bdb23d0d3bdba2c8e2f0
     name: flask-api-chart
     type: application
     urls:
     - https://chainomi.github.io/helm-charter-2/flask-api-chart-1.8.3.tgz
     version: 1.8.3
-generated: "2024-05-25T23:39:02.520984705Z"
+generated: "2024-05-26T00:01:27.358549606Z"
