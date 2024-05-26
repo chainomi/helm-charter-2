@@ -3,7 +3,17 @@ entries:
   flask-api-chart:
   - apiVersion: v2
     appVersion: 1.0.1
-    created: "2024-05-26T00:05:39.051355809Z"
+    created: "2024-05-26T11:38:32.570935345Z"
+    description: A Helm chart for flask api
+    digest: 6d396a99bf7ba8f364f11bf5742636a9202a6db5b1b7617a5cd8f212e47ce551
+    name: flask-api-chart
+    type: application
+    urls:
+    - https://chainomi.github.io/helm-charter-2/flask-api-chart-1.8.4.tgz
+    version: 1.8.4
+  - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2024-05-26T11:38:32.570545656Z"
     description: A Helm chart for flask api
     digest: 4a58324e742919c884466bfc6cde705e8019412d6ba078d5e9426f7724073fe5
     name: flask-api-chart
@@ -11,4 +21,4 @@ entries:
     urls:
     - https://chainomi.github.io/helm-charter-2/flask-api-chart-1.8.3.tgz
     version: 1.8.3
-generated: "2024-05-26T00:05:39.050827132Z"
+generated: "2024-05-26T11:38:32.570014823Z"
