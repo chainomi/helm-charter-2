@@ -1,5 +1,5 @@
 # Instructions
-==============
+-------------
 
 ## Repo setup and Git hub actions setup
 --------------
@@ -20,6 +20,6 @@
 
 
 # References
-==============
+------------
 1. Helm official site - https://helm.sh/docs/topics/chart_repository/#github-pages-example
 2. Example repo - https://github.com/technosophos/tscharts 
